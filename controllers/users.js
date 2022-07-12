@@ -61,6 +61,7 @@ const getUsers = async(req = request, res = response) => {
             created_at, updated_at
         } = req.body
 
+        // Create instance model 
         const user = new User({
             name, last_name, email, password, 
             gender, phone, birthdate, patient_id,
@@ -90,7 +91,7 @@ const getUsers = async(req = request, res = response) => {
  const updateUser = async(req = request, res = response) => {
     try {
         
-        const user_id = mongoose.Types.ObjectId(req.params.user_id.trim());
+        const user_id = mongoose.Types.ObjectId(req.params.user_id.trim())
 
         const { 
             password, ...user_rest

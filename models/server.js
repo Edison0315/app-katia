@@ -10,7 +10,8 @@ class Server {
 
         // Paths obj
         this.paths = {
-            users: '/api/users'
+            users: '/api/users',
+            news: '/api/news'
         }
 
         // DB connection
@@ -35,6 +36,7 @@ class Server {
 
     routes(){
         this.app.use(this.paths.users, require('../routes/users'))
+        this.app.use(this.paths.news, require('../routes/news'))
     }
 
     listen(){
