@@ -1,5 +1,7 @@
-const express = require('express')
+const express          = require('express')
 const { DBconnection } = require('../database/connection')
+const fileUpload       = require('express-fileupload')
+
 
 class Server {
 
@@ -11,7 +13,8 @@ class Server {
         // Paths obj
         this.paths = {
             users: '/api/users',
-            news: '/api/news'
+            news: '/api/news',
+            files: '/api/files'
         }
 
         // DB connection
@@ -32,11 +35,19 @@ class Server {
     middlewares(){
         // JSON parse
         this.app.use(express.json())
+
+        // Upload files
+        this.app.use(fileUpload({
+            useTempFiles: true,
+            tempFileDir: '/tmp/',
+            createParentPath: true
+        }))
     }
 
     routes(){
         this.app.use(this.paths.users, require('../routes/users'))
         this.app.use(this.paths.news, require('../routes/news'))
+        this.app.use(this.paths.files, require('../routes/files'))
     }
 
     listen(){
