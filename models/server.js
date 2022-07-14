@@ -18,7 +18,7 @@ class Server {
         }
 
         // DB connection
-        // this.dbConnection()
+        this.dbConnection()
         
         // Middlewares
         this.middlewares()
@@ -28,9 +28,9 @@ class Server {
 
     }
 
-    // async dbConnection(){
-    //     await DBconnection()
-    // }
+    async dbConnection(){
+        await DBconnection()
+    }
 
     middlewares(){
         // JSON parse
