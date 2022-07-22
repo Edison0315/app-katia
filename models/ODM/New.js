@@ -26,8 +26,7 @@ const newSchema = Schema({
         required: [true, 'Icon field is required']
     },
     patient_id: {
-        type: Number,
-        unique: true
+        type: Number
     },
     status: {
         type: Boolean,

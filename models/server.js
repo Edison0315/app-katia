@@ -1,5 +1,6 @@
 const express          = require('express')
 const { DBconnection } = require('../database/connection')
+const cors             = require('cors')
 const fileUpload       = require('express-fileupload')
 
 
@@ -14,7 +15,8 @@ class Server {
         this.paths = {
             users: '/api/users',
             news: '/api/news',
-            files: '/api/files'
+            files: '/api/files',
+            patient: '/api/patient'
         }
 
         // DB connection
@@ -33,6 +35,9 @@ class Server {
     }
 
     middlewares(){
+        // Cors
+        this.app.use(cors())
+
         // JSON parse
         this.app.use(express.json())
 
@@ -48,6 +53,7 @@ class Server {
         this.app.use(this.paths.users, require('../routes/users'))
         this.app.use(this.paths.news, require('../routes/news'))
         this.app.use(this.paths.files, require('../routes/files'))
+        this.app.use(this.paths.patient, require('../routes/patient'))
     }
 
     listen(){

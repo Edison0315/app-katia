@@ -56,14 +56,14 @@ const storeNew = async(req = request, res = response) => {
         
         const {
             type, level, date,
-            time, comments, icon,
+            time, comments, icon, patient_id,
             created_at, updated_at
         } = req.body
 
         // Create instance model 
         const $new = new New({
             type, level, date,
-            time, comments, icon,
+            time, comments, icon, patient_id,
             created_at, updated_at
         })
         // Store in mongo
