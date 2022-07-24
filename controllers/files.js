@@ -80,6 +80,7 @@ const storeFile = async(req = request, res = response) => {
         await file.save()
 
         return res.status(201).json({
+            code: 201,
             message: "File created sucessfully",
             file
         })
@@ -114,6 +115,7 @@ const deleteFile = async(req = request, res = response) => {
         })
 
         return res.status(200).json({
+            code: 200,
             message: "File deleted sucessfully"
         })
 

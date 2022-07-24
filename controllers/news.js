@@ -70,6 +70,7 @@ const storeNew = async(req = request, res = response) => {
         await $new.save()
 
         return res.status(201).json({
+            code: 201,
             message: "New created sucessfully",
             new: $new
         })
@@ -106,6 +107,7 @@ const updateNew = async(req = request, res = response) => {
         )
 
         return res.status(200).json({
+            code: 200,
             message: "New updated sucessfully",
             new: $new
         })
@@ -129,6 +131,7 @@ const deleteNew = async(req = request, res = response) => {
         await New.findByIdAndDelete(new_id)
         
         return res.status(200).json({
+            code: 200,
             message: "User deleted sucessfully"
         })
 
