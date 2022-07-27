@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start": "serve -s build",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -17,7 +17,8 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-fileupload": "^1.4.0",
-    "mongoose": "^6.4.3"
+    "mongoose": "^6.4.3",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
