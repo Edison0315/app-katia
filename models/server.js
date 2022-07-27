@@ -9,7 +9,7 @@ class Server {
     constructor(){
 
         this.app  = express()
-        this.port = 8080
+        this.port = process.env.KATIA_PORT || 3000
 
         // Paths obj
         this.paths = {
