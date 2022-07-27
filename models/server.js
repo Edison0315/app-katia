@@ -9,7 +9,7 @@ class Server {
     constructor(){
 
         this.app  = express()
-        this.port = 80
+        this.port = 8080
 
         // Paths obj
         this.paths = {
