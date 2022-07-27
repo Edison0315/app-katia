@@ -14,8 +14,7 @@ const fileSchema = Schema({
         type: String
     },
     patient_id: {
-        type: Number,
-        unique: true
+        type: Number
     },
     status: {
         type: Boolean,
