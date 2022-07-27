@@ -8,4 +8,5 @@ const router = Router()
 // Patient
 router.get('/metrics', getMetrics)
 
+
 module.exports = router
